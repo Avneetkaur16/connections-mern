@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import cookieParser from "cookie-parser";
 import path from 'path';
+import { URL } from 'url';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import postRoutes from './routes/postRoutes.js';
@@ -10,6 +11,7 @@ import postRoutes from './routes/postRoutes.js';
 
 const app = express();
 dotenv.config();
+const __dirname = decodeURI(new URL('.', import.meta.url).pathname);
 
 
 const connect = async() => {
